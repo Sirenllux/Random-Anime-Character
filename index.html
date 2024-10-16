@@ -5,29 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Explore random anime characters with language options in Korean, English, and Japanese.">
     <link rel="stylesheet" href="styles.css">
-    <title></title> <!-- Remove hardcoded title -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <title>랜덤 애니메 캐릭터</title>
 </head>
 <body>
     <div id="app-container">
-        <h1 id="page-title">랜덤 애니메 캐릭터</h1> <!-- Ensure initial title is in Korean -->
+        <h1 id="page-title">랜덤 애니메 캐릭터</h1> <!-- Default Korean Title -->
         <div id="character-card">
             <div id="character-info">
                 <h2 id="character-name">Character Name</h2>
                 <img id="character-image" src="" alt="Character Image" style="display: none;">
                 <button id="details-btn">Show Details</button>
                 <div id="character-details" style="display: none;">
-                    <p id="character-bio">Bio: </p>
+                    <p id="character-bio">Bio: Example character bio goes here...</p>
                 </div>
             </div>
             <button id="shuffle-btn">Shuffle Character</button>
             <p id="loading-text" style="display: none;">Loading...</p>
+
+            <!-- Language Buttons with Google Translate Dropdown -->
             <div id="language-buttons">
-                <button id="lang-ko">한국어</button> <!-- Korean -->
+                <button id="lang-ko" class="selected">한국어</button> <!-- Korean -->
                 <button id="lang-en">English</button> <!-- English -->
                 <button id="lang-ja">日本語</button> <!-- Japanese -->
             </div>
+            
+            <!-- Google Translate Dropdown -->
+            <div id="google_translate_element"></div>
         </div>
     </div>
+
+    <!-- Add the Google Translate API script -->
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'ko', includedLanguages: 'ko,en,ja'}, 'google_translate_element');
+      }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     
     <script src="script.js"></script>
 </body>
