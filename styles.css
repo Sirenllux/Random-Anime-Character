@@ -6,9 +6,9 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #121212; /* Dark background */
-    color: #ffffff; /* White text */
+    font-family: 'Roboto', 'Noto Sans JP', 'Noto Sans KR', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,10 +24,15 @@ body {
 #page-title {
     font-size: 27px;
     margin-bottom: 20px;
+    height: 50px; /* Fixed height */
+    line-height: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 #character-card {
-    background-color: #1e1e1e; /* Card background */
+    background-color: #1e1e1e;
     border-radius: 12px;
     box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.7);
     padding: 20px;
@@ -38,76 +43,70 @@ body {
 }
 
 #character-card:hover {
-    transform: scale(1.05); /* Scale effect on hover */
+    transform: scale(1.05);
 }
 
 #character-name {
-    font-size: 24px; /* Character name size */
+    font-size: 24px;
     margin-bottom: 10px;
 }
 
 #character-image {
-    max-width: 100%; /* Responsive image */
+    max-width: 100%;
     height: auto;
-    border-radius: 8px; /* Rounded corners */
+    border-radius: 8px;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
     margin-bottom: 20px;
-    display: block; /* Ensure block display for centering */
-    margin-left: auto; /* Center alignment */
-    margin-right: auto; /* Center alignment */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #character-bio {
     margin-top: 10px;
-    text-align: left; /* Align text to the left */
-    white-space: pre-wrap; /* Preserve spaces and line breaks */
-    font-size: 14px; /* Smaller font size for details */
+    text-align: left;
+    white-space: pre-wrap;
+    font-size: 16px; /* Larger font */
+    line-height: 1.5; /* Better readability */
 }
 
 #shuffle-btn, #lang-ko, #lang-en, #lang-ja {
-    background-color: #6200ea; /* Button background */
-    color: white; /* Button text color */
-    padding: 10px; /* Button padding */
-    font-size: 14px; /* Button font size */
-    border-radius: 8px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
+    background-color: #6200ea;
+    color: white;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 8px;
+    cursor: pointer;
     margin-bottom: 10px;
-    width: 100%; /* Full width */
+    width: 100%;
 }
 
 #shuffle-btn:hover, #lang-ko:hover, #lang-en:hover, #lang-ja:hover {
-    background-color: #3700b3; /* Darker background on hover */
+    background-color: #3700b3;
 }
 
 #language-buttons {
-    display: flex; /* Flexbox for language buttons */
-    justify-content: space-between; /* Space between buttons */
-    margin-top: 10px; /* Margin above buttons */
-    width: 100%; /* Full width */
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    width: 100%;
 }
 
 #details-btn {
-    background-color: #009688; /* Less saturated color */
-    color: white; /* Text color */
-    padding: 10px; /* Padding */
-    font-size: 14px; /* Font size */
-    border-radius: 8px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor */
-    margin-top: 10px; /* Space above button */
-    width: 100%; /* Full width */
+    background-color: #009688;
+    color: white;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
 }
 
 #details-btn:hover {
-    background-color: #00796b; /* Darker color on hover */
+    background-color: #00796b;
 }
 
 button:focus {
-    outline: 2px solid #6200ea; /* Custom focus outline for accessibility */
-}
-
-/* Media query for small screens */
-@media (max-width: 600px) {
-    #character-card {
-        max-width: 90%; /* Make card adapt to smaller screens */
-    }
+    outline: 2px solid #6200ea;
 }
