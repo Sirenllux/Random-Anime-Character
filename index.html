@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko"> <!-- Default language set to Korean -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore random anime characters with language options in Korean, English, and Japanese.">
+    <link rel="stylesheet" href="styles.css">
+    <title></title> <!-- Remove hardcoded title -->
+</head>
+<body>
+    <div id="app-container">
+        <h1 id="page-title">랜덤 애니메 캐릭터</h1> <!-- Ensure initial title is in Korean -->
+        <div id="character-card">
+            <div id="character-info">
+                <h2 id="character-name">Character Name</h2>
+                <img id="character-image" src="" alt="Character Image" style="display: none;">
+                <button id="details-btn">Show Details</button>
+                <div id="character-details" style="display: none;">
+                    <p id="character-bio">Bio: </p>
+                </div>
+            </div>
+            <button id="shuffle-btn">Shuffle Character</button>
+            <p id="loading-text" style="display: none;">Loading...</p>
+            <div id="language-buttons">
+                <button id="lang-ko">한국어</button> <!-- Korean -->
+                <button id="lang-en">English</button> <!-- English -->
+                <button id="lang-ja">日本語</button> <!-- Japanese -->
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
