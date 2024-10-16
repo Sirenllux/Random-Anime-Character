@@ -1,0 +1,113 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* White text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#app-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#page-title {
+    font-size: 27px;
+    margin-bottom: 20px;
+}
+
+#character-card {
+    background-color: #1e1e1e; /* Card background */
+    border-radius: 12px;
+    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    max-width: 350px;
+    width: 100%;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+#character-card:hover {
+    transform: scale(1.05); /* Scale effect on hover */
+}
+
+#character-name {
+    font-size: 24px; /* Character name size */
+    margin-bottom: 10px;
+}
+
+#character-image {
+    max-width: 100%; /* Responsive image */
+    height: auto;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    display: block; /* Ensure block display for centering */
+    margin-left: auto; /* Center alignment */
+    margin-right: auto; /* Center alignment */
+}
+
+#character-bio {
+    margin-top: 10px;
+    text-align: left; /* Align text to the left */
+    white-space: pre-wrap; /* Preserve spaces and line breaks */
+    font-size: 14px; /* Smaller font size for details */
+}
+
+#shuffle-btn, #lang-ko, #lang-en, #lang-ja {
+    background-color: #6200ea; /* Button background */
+    color: white; /* Button text color */
+    padding: 10px; /* Button padding */
+    font-size: 14px; /* Button font size */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    margin-bottom: 10px;
+    width: 100%; /* Full width */
+}
+
+#shuffle-btn:hover, #lang-ko:hover, #lang-en:hover, #lang-ja:hover {
+    background-color: #3700b3; /* Darker background on hover */
+}
+
+#language-buttons {
+    display: flex; /* Flexbox for language buttons */
+    justify-content: space-between; /* Space between buttons */
+    margin-top: 10px; /* Margin above buttons */
+    width: 100%; /* Full width */
+}
+
+#details-btn {
+    background-color: #009688; /* Less saturated color */
+    color: white; /* Text color */
+    padding: 10px; /* Padding */
+    font-size: 14px; /* Font size */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    margin-top: 10px; /* Space above button */
+    width: 100%; /* Full width */
+}
+
+#details-btn:hover {
+    background-color: #00796b; /* Darker color on hover */
+}
+
+button:focus {
+    outline: 2px solid #6200ea; /* Custom focus outline for accessibility */
+}
+
+/* Media query for small screens */
+@media (max-width: 600px) {
+    #character-card {
+        max-width: 90%; /* Make card adapt to smaller screens */
+    }
+}
