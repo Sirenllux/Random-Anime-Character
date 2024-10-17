@@ -1,4 +1,3 @@
-// Define the language strings for translation
 const translations = {
     en: {
         title: "Random Anime Character",
@@ -9,7 +8,7 @@ const translations = {
         bio: "Bio: ",
     },
     ko: {
-        title: "랜덤 애니메이션 캐릭터", // Korean default title
+        title: "랜덤 애니메이션 캐릭터", 
         shuffleBtn: "캐릭터 바꾸기",
         detailsBtn: "상세 보기",
         hideDetailsBtn: "상세 숨기기",
@@ -26,10 +25,8 @@ const translations = {
     },
 };
 
-// Default language
-let currentLanguage = 'ko'; // Start with Korean
+let currentLanguage = 'ko'; 
 
-// Function to fetch a random character using Jikan API
 async function fetchRandomCharacter() {
     const randomPage = Math.floor(Math.random() * 200) + 1;
     const randomCharacterIndex = Math.floor(Math.random() * 25);
@@ -50,7 +47,6 @@ async function fetchRandomCharacter() {
     }
 }
 
-// Function to load and display character details
 async function loadRandomCharacter() {
     const loadingText = document.getElementById('loading-text');
     loadingText.style.display = "block";
@@ -69,7 +65,7 @@ async function loadRandomCharacter() {
             characterImage.src = characterImageURL;
             characterImage.style.display = "block";
             characterImage.onerror = () => {
-                characterImage.src = "default_image_url"; // Fallback image
+                characterImage.src = "default_image_url";
             };
         } else {
             characterImage.style.display = "none";
@@ -81,7 +77,6 @@ async function loadRandomCharacter() {
     }
 }
 
-// Function to fetch detailed information from another source (Jikan API for details)
 async function fetchCharacterDetails(malId) {
     const detailsDiv = document.getElementById('character-details');
     const detailsButton = document.getElementById('details-btn');
@@ -112,7 +107,6 @@ async function fetchCharacterDetails(malId) {
     }
 }
 
-// Helper function to trim text to 500 bytes, ensuring it cuts at the end of a sentence
 function trimTo500Bytes(text) {
     let trimmedText = text.slice(0, 500);
     const lastPeriod = trimmedText.lastIndexOf(".");
@@ -122,28 +116,24 @@ function trimTo500Bytes(text) {
     return trimmedText;
 }
 
-// Function to change the language
 function changeLanguage(lang) {
     currentLanguage = lang;
-    updateLanguage(); // Call the updateLanguage function to reflect changes
+    updateLanguage(); 
 }
 
-// Function to update text based on the selected language
 function updateLanguage() {
-    document.title = translations[currentLanguage].title; // Update page title
-    document.getElementById('page-title').textContent = translations[currentLanguage].title; // Update the main title
-    document.getElementById('shuffle-btn').textContent = translations[currentLanguage].shuffleBtn; // Update shuffle button text
-    document.getElementById('details-btn').textContent = translations[currentLanguage].detailsBtn; // Update details button text
-    document.getElementById('loading-text').textContent = translations[currentLanguage].loadingText; // Update loading text
+    document.title = translations[currentLanguage].title; 
+    document.getElementById('page-title').textContent = translations[currentLanguage].title; 
+    document.getElementById('shuffle-btn').textContent = translations[currentLanguage].shuffleBtn; 
+    document.getElementById('details-btn').textContent = translations[currentLanguage].detailsBtn; 
+    document.getElementById('loading-text').textContent = translations[currentLanguage].loadingText; 
     document.getElementById('character-details').style.display = "none";
     document.getElementById('details-btn').textContent = translations[currentLanguage].detailsBtn;
-    document.documentElement.lang = currentLanguage; // Update the lang attribute of the HTML document
+    document.documentElement.lang = currentLanguage; 
 }
 
-// Event listener for the shuffle button
 document.getElementById('shuffle-btn').addEventListener('click', loadRandomCharacter);
 
-// Event listeners for language buttons
 document.getElementById('lang-ko').addEventListener('click', function() {
     changeLanguage('ko');
 });
@@ -154,6 +144,5 @@ document.getElementById('lang-ja').addEventListener('click', function() {
     changeLanguage('ja');
 });
 
-// Load a random character and set the default language to Korean when the page loads
-updateLanguage(); // Ensure the page starts in Korean
-loadRandomCharacter(); // Load a random character
+updateLanguage(); 
+loadRandomCharacter(); 
