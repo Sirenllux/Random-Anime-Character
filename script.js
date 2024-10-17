@@ -1,7 +1,7 @@
 // Define the language strings for translation
 const translations = {
     en: {
-        title: "Random Anime Characters",
+        title: "Random Anime Character",
         shuffleBtn: "Shuffle Character",
         detailsBtn: "Show Details",
         hideDetailsBtn: "Hide Details",
@@ -9,7 +9,7 @@ const translations = {
         bio: "Bio: ",
     },
     ko: {
-        title: "랜덤 애니메이션 캐릭터",  // Korean default title
+        title: "랜덤 애니메이션 캐릭터", // Korean default title
         shuffleBtn: "캐릭터 바꾸기",
         detailsBtn: "상세 보기",
         hideDetailsBtn: "상세 숨기기",
