@@ -28,7 +28,12 @@ body {
     line-height: 50px;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
+    white-space: nowrap; /* Prevents title text from wrapping */
+    width: 100%;
+    max-width: 100%; /* Makes sure it doesn't overflow */
+    font-weight: bold;
+    word-wrap: break-word;
+    display: block;
 }
 
 #character-card {
@@ -36,10 +41,12 @@ body {
     border-radius: 12px;
     box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.7);
     padding: 20px;
-    max-width: 400px;
-    width: 100%;
+    max-width: 400px; /* Fixed max width */
+    width: 100%; /* Card's width will not exceed 400px */
     text-align: center;
+    box-sizing: border-box; /* Padding and border are included in the width and height */
     transition: transform 0.3s ease;
+    overflow: hidden; /* Prevent overflow horizontally */
 }
 
 #character-card:hover {
@@ -49,6 +56,9 @@ body {
 #character-name {
     font-size: 24px;
     margin-bottom: 10px;
+    white-space: nowrap; /* Prevents long names from expanding the card */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Add ellipsis if name is too long */
 }
 
 #character-image {
@@ -67,8 +77,12 @@ body {
     margin-bottom: 12px;
     text-align: center;
     white-space: pre-wrap;
-    font-size: 10px; /* Larger font */
-    line-height: 1.5; /* Better readability */
+    font-size: 12px;
+    line-height: 1.5;
+    overflow-wrap: break-word; /* Ensures long words break */
+    word-wrap: break-word;
+    max-width: 100%; /* Ensure the bio text respects the card's width */
+    min-height: 60px; /* Set minimum height to avoid layout shift */
 }
 
 #shuffle-btn, #lang-ko, #lang-en, #lang-ja {
