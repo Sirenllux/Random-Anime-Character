@@ -1,1 +1,1 @@
-have fun :)
+Have Fun! :)
