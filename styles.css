@@ -39,7 +39,7 @@ body {
     border-radius: 12px;
     box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.7);
     padding: 15px;
-    max-width:55%; /* 카드 너비 제한 */
+    max-width: 65%; /* 카드 너비 제한 */
     width: 55%; /* 모바일에서는 전체 너비 사용 */
     text-align: center;
     transition: transform 0.3s ease;
