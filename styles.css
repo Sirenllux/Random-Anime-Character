@@ -13,83 +13,70 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    padding: 20px; /* 기본 패딩 추가 */
 }
 
 #app-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 600px; /* 최대 너비 설정 */
+    width: 100%;
 }
 
 #page-title {
-    font-size: 27px;
+    font-size: 2rem; /* 기본 폰트 크기 */
     margin-bottom: 20px;
-    height: 50px; /* Fixed height */
-    line-height: 50px;
+    text-align: center;
+    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap; /* Prevents title text from wrapping */
-    width: 100%;
-    max-width: 100%; /* Makes sure it doesn't overflow */
-    font-weight: bold;
-    word-wrap: break-word;
-    display: block;
+    max-width: 100%;
 }
 
 #character-card {
     background-color: #1e1e1e;
     border-radius: 12px;
     box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.7);
-    padding: 20px;
-    max-width: 400px; /* Fixed max width */
-    width: 100%; /* Card's width will not exceed 400px */
+    padding: 15px;
+    max-width: 60%; /* 카드 너비 제한 */
+    width: 60%; /* 모바일에서는 전체 너비 사용 */
     text-align: center;
-    box-sizing: border-box; /* Padding and border are included in the width and height */
     transition: transform 0.3s ease;
-    overflow: hidden; /* Prevent overflow horizontally */
 }
 
 #character-card:hover {
-    transform: scale(1.05);
+    transform: scale(1.04);
 }
 
 #character-name {
-    font-size: 24px;
+    font-size: 1.5rem; /* 기본 이름 폰트 크기 */
     margin-bottom: 10px;
-    white-space: nowrap; /* Prevents long names from expanding the card */
-    overflow: hidden;
-    text-overflow: ellipsis; /* Add ellipsis if name is too long */
 }
 
 #character-image {
-    max-width: 100%;
-    height: auto;
+    display: block; /* Makes the image a block element */
+    max-width: 100%; /* Ensures the image doesn't exceed the container's width */
+    max-height: 350px; /* Set the maximum height as needed */
+    height: auto; /* Maintains the aspect ratio */
     border-radius: 8px;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
-    margin-bottom: 20px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto 20px; /* Center the image horizontally */
 }
 
 #character-bio {
-    margin-top: 12px;
-    margin-bottom: 12px;
+    margin: 12px 0;
     text-align: center;
     white-space: pre-wrap;
-    font-size: 12px;
+    font-size: 0.9rem; /* 기본 바이오 폰트 크기 */
     line-height: 1.5;
-    overflow-wrap: break-word; /* Ensures long words break */
-    word-wrap: break-word;
-    max-width: 100%; /* Ensure the bio text respects the card's width */
-    min-height: 60px; /* Set minimum height to avoid layout shift */
 }
 
 #shuffle-btn, #lang-ko, #lang-en, #lang-ja {
     background-color: #6200ea;
     color: white;
     padding: 10px;
-    font-size: 14px;
+    font-size: 1rem; /* 기본 버튼 폰트 크기 */
     border-radius: 8px;
     cursor: pointer;
     margin-bottom: 10px;
@@ -111,7 +98,7 @@ body {
     background-color: #009688;
     color: white;
     padding: 10px;
-    font-size: 14px;
+    font-size: 1rem; /* 기본 버튼 폰트 크기 */
     border-radius: 8px;
     cursor: pointer;
     margin-top: 10px;
@@ -124,4 +111,46 @@ body {
 
 button:focus {
     outline: 2px solid #6200ea;
+}
+
+/* 미디어 쿼리 - 모바일 화면 최적화 */
+@media (max-width: 600px) {
+    body {
+        padding: 10px; /* 모바일 패딩 조정 */
+    }
+
+    #page-title {
+        font-size: 1.5rem; /* 모바일 제목 폰트 크기 */
+    }
+
+    #character-name {
+        font-size: 1.2rem; /* 모바일 이름 폰트 크기 */
+    }
+
+    #character-bio {
+        font-size: 0.85rem; /* 모바일 바이오 폰트 크기 */
+    }
+
+    #shuffle-btn, #lang-ko, #lang-en, #lang-ja, #details-btn {
+        font-size: 0.9rem; /* 모바일 버튼 폰트 크기 */
+    }
+}
+
+/* 미디어 쿼리 - 태블릿 및 소형 노트북 최적화 */
+@media (min-width: 601px) and (max-width: 1024px) {
+    #page-title {
+        font-size: 1.8rem; /* 태블릿 제목 폰트 크기 */
+    }
+
+    #character-name {
+        font-size: 1.4rem; /* 태블릿 이름 폰트 크기 */
+    }
+
+    #character-bio {
+        font-size: 0.9rem; /* 태블릿 바이오 폰트 크기 */
+    }
+
+    #shuffle-btn, #lang-ko, #lang-en, #lang-ja, #details-btn {
+        font-size: 0.95rem; /* 태블릿 버튼 폰트 크기 */
+    }
 }
